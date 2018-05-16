@@ -3,9 +3,22 @@ import sys
 
 ALPHABET = 'abcdefghijklmnopqrstuvwxyz'
 
+def all_lower(message):
+  return message.lower()
+
+def find_char(message):
+  crypto_char = ''
+  for char in message:
+    if char in ALPHABET:
+      crypto_char += 'xyz'
+    else:
+      crypto_char += char
+
+  return crypto_char
+
 def encrypt(message, key = 3):
   m = ''
-  message = message.lower()
+  message = all_lower(message)
   for char in message:
     if char in ALPHABET:
       char_index = ALPHABET.index(char)
